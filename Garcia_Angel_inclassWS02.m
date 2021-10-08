@@ -33,6 +33,7 @@ a = [1 4 8 -3];
 disp(a)
 
 % part 2
+disp(' >> Part 2')
 b = a';
 disp(b)
 
@@ -90,6 +91,7 @@ Catprod = C*a';
 disp(Catprod)
 
 % part 3
+format short %changes it back to short 
 disp(' >> Part 3')
 Minv = inv(M);
 disp(Minv)
