@@ -45,15 +45,16 @@ end
 
 % part iii
 disp(' >> Part iii')
+we = ('we DO need no education');
 for x = 1:30
-    disp('we DO need no education')
+    disp(we)
 end
 
 % part iv
 disp(' >> Part iv')
 % part 1
 format LONGG;
-v = logspace(1,5,6);
+v = logspace(1,6,6);
 for j = 1:length(v)
     disp(v(j))
 end
@@ -68,31 +69,34 @@ disp(f)
 
 % part vi
 disp(' >> Part vi')
-M = zeros(3);
-c = 0;
+M = magic(3);
+c = 1;
+e = [];
 for icol = 1:3
     for irow = 1:3
+        e(c) = M(irow,icol);
         c = c + 1;
     end
 end
-disp(c)
+disp('Vector E')
+disp(e)
+disp('Matrix M')
+disp(M)
 %% Question B
 disp('==================================================')
 disp(' >>>> Question B')
 % part i
 disp(' >> Part ii')
-g = 0;
+g = [];
 for ef = 1:length(e)
-    g = e(ef)*f(ef);
+    g(ef) = e(ef)*f(ef);
 end
-disp('< g >')
-disp(g)
-disp('< e.*f >')
-disp(e.*f)
+
 
 % part ii
 disp(' >> Part ii')
-P = f*e';
+P = f*e;
+disp('Matrix P')
 disp(P)
 Q = zeros(length(e));
 for outer = 1:length(e)
@@ -100,6 +104,7 @@ for outer = 1:length(e)
         Q(inner,outer) = f(inner)*e(outer);
     end
 end
+disp('Matrix Q')
 disp(Q)
 
 %% Question C
@@ -118,12 +123,9 @@ disp(x)
 % part ii
 disp(' >> Part ii')
 %highest possible value for y can only be 19
-format SHORT
-for y = 18:.001:19 
-    if (y + cos(y*pi/2)==18)
+for y = 1:19 
+    if (y + sin(y*pi/2) == 18)
         disp(y)
-    elseif y==19
-        disp('nope')
+        break;
     end
 end 
-disp(y)
